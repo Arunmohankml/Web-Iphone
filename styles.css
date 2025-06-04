@@ -121,7 +121,7 @@ position: absolute;
 }
 
 #home-screen {
-    display: none;
+    
 }
 
 .wallpaper {
@@ -217,6 +217,7 @@ position: absolute;
 }
 
 .lock-screen {
+  z-index:10;
     position: absolute;
     top: 0%;
     left: 0%;
