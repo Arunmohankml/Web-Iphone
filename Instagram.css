@@ -1,0 +1,284 @@
+/* instagram.css */
+
+/* Background gradient for the login screen */
+
+#instagram-app {
+    width: 100%;
+    height: 100%;
+     /* Limit to fit inside bezels */
+     /* Slightly lighter than the background for contrast */
+    overflow: hidden;
+    border-radius: 20px; /* Optional, to create rounded corners if needed */
+    
+}
+/* instagram.css */
+
+/* Background gradient for the login screen */
+
+
+/* Center the login content */
+#instagram-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #ffffff;
+    text-align: center;
+
+    
+  
+  background-image: linear-gradient(
+    105deg,
+    hsl(275deg 93% 17%) 0%,
+    hsl(234deg 54% 24%) 12%,
+    hsl(214deg 62% 22%) 33%,
+    hsl(198deg 100% 17%) 55%,
+    hsl(183deg 100% 13%) 78%,
+    hsl(149deg 82% 13%) 100%
+  );
+
+    /* Adjust gradient colors to match Instagram's style */
+
+    transform-origin: top center;
+}
+
+/* Language text styling */
+#language {
+    font-size: 12px; /* 50% of original font size */
+    color: #bdbdbd;
+    margin-bottom: 10px;
+    transform: translateY(-62px);
+}
+
+/* Logo styling */
+#logo img {
+    width: 55px; /* 50% of original width */
+    margin: 20px 0;
+    transform: translateY(-57px);
+}
+
+/* Input fields styling */
+#login-form {
+  
+    width: 100%;
+}
+/* Shift the input fields to the left */
+#login-form input {
+  margin-left: 10%;
+    padding: 10px;
+    margin: 4px 0;
+    font-size: 13px;
+    height:23%;
+    
+    border: 1px solid #475970;
+    border-radius: 12px;
+    background-color: #131f2e;
+    color: #ffffff;
+
+     /* Shift input fields 10px to the left */
+    width:85%;
+    transform: translateY(-20px);
+}
+
+/* Login button styling */
+#login-button {
+    padding: 0.4rem;
+   transform: translateY(-7px);
+    font-size: 13px;
+    background-color: #0565ff;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    height:30%;
+    width:90%;
+}
+
+/* Forgotten password link styling */
+#forgot-password {
+    color: white;
+    font-size: 13px;
+    margin: 40px 0;
+    text-decoration: none;
+}
+
+/* Create account button styling */
+#create-account-button {
+    padding: 0.4rem;
+    margin-top: 10%;
+    font-size: 13px;
+    background: none;
+    border: 1px solid #3897f0;
+    border-radius: 20px;
+    color: #3897f0;
+    cursor: pointer;
+    height:6%;
+    width:90%;
+    transform: translateY(90px);
+}
+
+/* Meta text styling */
+#meta {
+    margin-top: 2px;
+    font-size: 12px;
+    color: #a5a5a5;
+    transform: translateY(91px);
+}
+
+/* Post Input Field */
+#post-input {
+    width: 100%; /* 90% width of the screen */
+    height: 8%; /* Adjust height for proper visibility */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    margin: 30px 0px 0px 5px; /* Center input with margin at the top */
+    background-color: #1c1c1c;
+    color: white;
+    font-size: 12px;
+    box-sizing: border-box;
+    display: block;
+}
+#buttons-container {
+    width: 100%; /* Make buttons container 90% wide */
+    text-align: center;
+    margin: 3px auto ; /* Center the buttons and provide space from the input field */
+}
+/* Post Button */
+#post-button {
+    width: 60%; /* Make button 45% wide */
+    height: 80%; /* Set height for uniform button sizing */
+    padding: 10px;
+    background-color: #3c3c3c;
+    color: white;
+    border:none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0 0px 0px 0px; /* Margin between buttons */
+    text-align: center;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* Attach File Button */
+#image-label {
+    width: 55%; /* Make button 45% wide */
+    height: 1.7%; /* Set height for uniform button sizing */
+    padding:10px;
+    background-color: #3c3c3c;
+    color: white;
+    border:none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0 0px 2px 0px; /* Margin between buttons */
+    text-align: center;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* Hide the file input field */
+#image-upload {
+    display: none; /* Hide the actual file input */
+}
+
+/* Styling for the buttons container (for Post and Attach File buttons) */
+
+
+/* Main Instagram Feed */
+#instagram-feed {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Full viewport height */
+    background-color: #121212;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 27px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+    padding-top: 20px; /* Space for the input and buttons */
+    box-sizing: border-box;
+}
+
+/* Posts Container */
+/* Posts Container */
+/* Posts Container */
+.posts {
+    height: calc(100vh - 120px); /* Take full screen height minus the input and buttons */
+    width: 96%;
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 10px ; /* Add some margin if needed */
+     max-height: 100%;
+    padding-left: 3px; /* Padding to prevent content from touching the edge */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    position: relative; /* Make sure the content can scroll inside this container */
+}
+
+/* Post Box */
+.postbox {
+    background-color: #121212;
+    padding: 15px;
+    margin-bottom: 10px; /* Space between posts */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Stacks text above image */
+    align-items: flex-start; /* Align content to the left */
+    color: white;
+    width: 100%;
+    max-width: 100%;
+   
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 2px solid #3c3c3c;
+    word-wrap: break-word; /* Allows text to wrap to a new line */
+}
+
+/* Add additional styles for text overflow */
+
+/* Username and Text Styling */
+.username {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    width: 100%; /* Ensures it spans the full width of .postbox */
+}
+
+.text {
+  margin-top:5px;
+    font-size: 14px;
+    color: white;
+    text-align: left;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* Allow text to wrap properly */
+    white-space: normal; /* Ensures the text can wrap naturally */
+}
+
+/* Image Styling */
+.post-image {
+    max-width: 100%;
+    max-height: 90%;
+    object-fit: contain;
+}
+/* Styling for the Like button */
+.like-icon {
+    width: 20px;  /* Adjust width */
+    height: 20px;  /* Adjust height */
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 10px;  /* Adjust positioning */
+    margin-left: 0px;  /* Adjust positioning */
+    background-image: url('images/like.png');  /* Default image (unliked heart) */
+    background-size: contain;  /* Ensure the image fits the container */
+    background-repeat: no-repeat;
+}
+
+/* When the post is liked */
+.like-icon.liked {
+    background-image: url('images/liked.png');  /* Change to red heart image when liked */
+}

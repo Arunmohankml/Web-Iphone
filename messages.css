@@ -1,0 +1,353 @@
+#message-app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #111111;
+}
+
+.Mheading {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 10px; /* Add space above the heading if needed */
+}
+
+.recent-contact-item {
+    padding: 10px;
+    border-bottom: 1px solid #3c3c3c;
+    cursor: pointer;
+    color: white;
+    display: flex;
+     margin-top:-5px;
+    flex-direction: column; /* Stack the message preview below */
+    margin-bottom:0px;
+    padding-bottom:20px;
+    
+}
+
+.contact-info span {
+  display:flex;
+  margin-top:-45px;
+  margin-left:39px;
+    font-size: 14px !important;
+    align-items: center
+    
+}
+
+.recent-contact-item img {
+    width: 30px;
+    height:30px;
+    border-radius: 50%;
+    margin-right: 10px; /* Space between profile image and contact name */
+    margin-top:20px;
+}
+
+.recent-contact-item span {
+    font-size: 5px; /* Adjusted size for name */
+}
+
+.message-preview {
+    font-size: 12px; /* Smaller font for message preview */
+    color: #3c3c3c;
+    max-width: 60%; /* Limit width for message preview */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Display "..." for long messages */
+    margin-top:4px; /* Add space between contact info and message preview */
+    margin-left: 40px;
+}
+
+.recent-contact-item:hover {
+    background-color: #333;
+}
+
+.plus-button {
+    position: fixed;
+    top: 7%; /* Adjusted position for top */
+    right: 13px; /* Adjusted position for right */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+#message-feed{
+  margin-top:20%;
+  margin-right: 5px;
+  margin-left: 5px;
+  
+}
+/* Contact list styling */
+/* New message screen styling */
+.new-message-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 60px; /* To prevent message area from being hidden behind the input area */
+    background-color: #111111;
+    margin-top:45px;
+     
+     
+}
+
+.new-message-header {
+    background-color: #1e1e1e;
+    padding: 5px;
+    text-align: center;
+    font-size: 7px;
+    height: 40px; /* Increase the height to accommodate the profile image */
+    position: relative; /* Set position to relative for positioning the image */
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+     border:none;
+     box-shadow: 0px -5px 7px rgba(0, 0, 0, 0.8);
+}
+.new-message-header h2 {
+    margin-top:10px;
+    color: white;
+}
+.contact-controls{
+  position: relative; /* Keep it at the bottom */
+     /* 10px from the bottom of the screen */
+    
+    padding: 0 0px; /* Padding for some spacing on the sides */
+    display: flex;
+    
+    margin-bottom: 0px;
+  align-items: center;
+  
+}
+.contact-display {
+    flex-grow: 1;
+    text-align: left;
+   
+    background-color: #111111;
+    
+    border-bottom: 2px solid #1e1e1e;
+    width: 140px;
+    height:35px;
+    font-size: 12px;
+    color: white;
+    margin-top: 5px;
+    padding: 12px 0px 0px 13px ;
+}
+
+.small-plus-button {
+    background-color: #1e1e1e;
+    
+    color: blue;
+    border:1px solid black;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 7px;
+    
+    right:3px;
+    cursor: pointer;
+    position: absolute;
+    margin-right:9px;
+}
+
+
+.contact-picker-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 60px; /* To prevent message area from being hidden behind the input area */
+    background-color: #111111;
+    margin-top:45px;
+     
+     
+}
+
+.contact-picker-header {
+    background-color: #1e1e1e;
+    padding: 8px;
+    text-align: center;
+    font-size: 8px;
+    height: 30px; /* Increase the height to accommodate the profile image */
+    position: relative; /* Set position to relative for positioning the image */
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+     border:none;
+     box-shadow: 0px -5px 7px rgba(0, 0, 0, 0.8);
+}
+
+.contact-picker-header h2 {
+    margin-top:10px;
+    color: white;
+}
+
+.contact-picker-list {
+    max-height: 70%;  /* Set max height to ensure scrolling works */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 15px;
+}
+
+.contact-item {
+    padding: 12px;
+    margin-bottom: 3px;
+    margin-top:3px;
+    border-bottom: 1px solid #1e1e1e;
+    color: white;
+    cursor: pointer;
+    
+    
+    font-size: 10px
+}
+
+.contact-item:hover {
+    background-color: #333;
+}
+
+.message-input-section {
+    position: fixed; /* Keep it at the bottom */
+    bottom: 30px; /* 10px from the bottom of the screen */
+    width: 100%;
+    padding: 0 12px; /* Padding for some spacing on the sides */
+    display: flex;
+    justify-content: flex-start; /* Align the input field to the left */
+    margin-bottom: 5px;
+}
+
+#new-message-input {
+    width: 90%; /* Full width minus space for the button */
+    padding-left: 40px; /* Space for the send button */
+    box-sizing: border-box; /* To include padding inside the width */
+    border-radius: 20px;
+    border: 2px solid #1e1e1e;
+    font-size: 13px;
+    height: 50px;
+    padding: 20px;
+    background-color:#111111 ;
+    color:white;
+}
+
+.send-new-message-button {
+    
+    position: absolute;
+    right: 57px; /* Position the send button on the right */
+    top: 50%; /* Center the button vertically */
+    transform: translateY(-50%); /* Adjust the button's vertical position */
+    background-image: url('images/send-arrow.png'); 
+    background-size: cover; /* Ensure the image covers the entire button */
+    background-position: center; /* Center the image inside the button */
+    background-color: transparent; /* Make the button background transparent */
+    border: none;
+    cursor: pointer;
+    z-index: 10; /* Ensure the button overlays the input */
+    width: 30px; /* Set the width of the button */
+    height: 30px; /* Set the height of the button */
+}
+
+
+
+
+#messaging-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 60px; /* To prevent message area from being hidden behind the input area */
+}
+
+#header {
+    background-color: #1e1e1e;
+    padding: 10px;
+    text-align: center;
+    font-size: 2px;
+    height:85px; /* Increase the height to accommodate the profile image */
+    position: relative; /* Set position to relative for positioning the image */
+}
+
+#profile-image {
+    position: absolute;
+    top:42px;
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 35px; /* Set the image width to 10px */
+    height: 35px; /* Set the image height to 10px */
+}
+
+#contact-name {
+    position: relative;
+    top: 75px; /* Move the contact name text down */
+    font-size: 1px;
+    color: white;
+}
+
+#messages {
+    flex-grow: 1;
+    padding: 5px;
+    overflow-y: auto; /* Allows scrolling */
+    display: flex;
+    flex-direction: column; /* Stack messages vertically */
+}
+
+.typing-container {
+    position: fixed; /* Keep it at the bottom */
+    bottom: 10px; /* 10px from the bottom of the screen */
+    width: 100%;
+    padding: 0 12px; /* Padding for some spacing on the sides */
+    display: flex;
+    justify-content: flex-start; /* Align the input field to the left */
+    margin-bottom: 7px;
+    
+}
+
+#message-input {
+    width: 90%; /* Full width minus space for the button */
+    padding-left: 40px; /* Space for the send button */
+    box-sizing: border-box; /* To include padding inside the width */
+    border-radius: 20px;
+    border: 2px solid #1e1e1e;
+    font-size: 13px;
+    height: 50px;
+    padding: 20px;
+    background-color:#111111 ;
+    color:white;
+}
+
+.send-button {
+    position: absolute;
+    right: 57px; /* Position the send button on the right */
+    top: 50%;  /* Center the button vertically */
+    transform: translateY(-50%); /* Adjust the button's vertical position */
+    background-image: url('send-arrow.png'); /* Set the image as the background */
+    background-size: cover; /* Ensure the image covers the entire button */
+    background-position: center; /* Center the image inside the button */
+    background-color: transparent; /* Make the button background transparent */
+    border: none;
+    cursor: pointer;
+    z-index: 10; /* Ensure the button overlays the input */
+    width: 30px; /* Set the width of the button */
+    height: 30px; /* Set the height of the button */
+}
+
+.message-box {
+  margin-top:10px;
+    margin: 5px;
+    padding: 12px;
+    border-radius:18px;
+    max-width: 80%; /* Allow the box to expand up to 70% of the container */
+    word-wrap: break-word; /* Ensure long words wrap to the next line */
+    height: auto; /* Adjust the height automatically based on content */
+    font-size: 12px;
+}
+
+.sent {
+    background-color: #0066ff;
+    align-self: flex-end; /* Align sent messages to the right */
+    
+}
+
+.received {
+
+    background-color: white;
+    align-self: flex-start; /* Align received messages to the left */
+}

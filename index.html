@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Phone Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contacts.css">
+    <link rel="stylesheet" href="instagram.css">
+     <link rel="stylesheet" href="messages.css">
+      <link rel="stylesheet" href="valet.css">
+      <link rel="stylesheet" href="settings.css">
+      <link rel="stylesheet" href="spotify.css">
+      <link rel="stylesheet" href="calculator.css">
+       <link rel="stylesheet" href="gpay.css">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  
+  
+    <div class="phone">
+      <!-- constants -->
+     
+
+     <div class="dynamic-island"></div>
+     <div class="statusbar" id="statusbar">
+          <img src="images/statusbar.png" alt="statusbar" class="status" id= "status">
+         <time id="time-display2">--:--</time> 
+     </div>
+          
+     
+    <div id="screen" class="screen">
+         
+         
+    <div id="lock-screen" class="lock-screen" onclick="unlockScreen()">
+     <div class="lock-screen-walpaper">
+      <div class="lock-screen-content">
+        <p id="date-display"></p>
+        <h2 id="time-display">--:--</h2> 
+       
+       </div>
+
+      </div>
+     </div>
+     
+    
+        
+        
+        
+        <!-- home screeen  -->
+        <div id="home-screen">
+          <div id ="wallpaper" class="wallpaper"></div>
+          <div class= "app-container">
+            
+            
+<div class="app" draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)" onclick="openApp('contacts')">
+    <div class="app-icon" style="background-image: url('images/contacts-icon.png');"></div>
+    <div class="app-name">Contacts</div>
+</div>
+
+<div id="app-contacts" class="app" draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)" onclick="openApp('contacts')">
+    <div class="app-icon" style="background-image: url('images/contacts-icon.png');"></div>
+    <div class="app-name">Contacts</div>
+</div>
+
+<div id="app-instagram" class="app" draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)" onclick="openApp('instagram')">
+    <div class="app-icon" style="background-image: url('images/instagram-icon.png');"></div>
+    <div class="app-name">Instagram</div>
+</div>
+
+<div id="app-messages" class="app" draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)" onclick="openApp('messages')">
+    <div class="app-icon" style="background-image: url('images/messages-icon.png');"></div>
+    <div class="app-name">Messages</div>
+</div>
+
+
+
+<div id="app-settings" class="app" draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)" onclick="openApp('settings')">
+    <div class="app-icon" style="background-image: url('images/settings-icon.png');"></div>
+    <div class="app-name" style="font-size: 1px;">Settings</div>
+</div>
+
+<div id="app-valet" class="app" draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)" onclick="openApp('valet')">
+    <div class="app-icon" style="background-image: url('images/valet-icon.png');"></div>
+    <div class="app-name" style="font-size: 1px;">Valet</div>
+</div>
+
+<div id="app-calculator" class="app" draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)" onclick="openApp('calculator')">
+    <div class="app-icon" style="background-image: url('images/calculator-icon.png');"></div>
+    <div class="app-name" style="font-size: 1px;">Calculator</div>
+</div>
+
+
+
+<div id="app-spotify" class="app" draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)" onclick="openApp('spotify')">
+    <div class="app-icon" style="background-image: url('images/spotify-icon.png');"></div>
+    <div class="app-name" style="font-size: 1px;">Spotify</div>
+</div>
+</div>
+
+<!-- App tray at the bottom -->
+<div class="app-tray" id="app-tray">
+    <!-- Placeholder apps for initial setup -->
+    <div class="app" id="app-tray-placeholder1" draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)">
+        <div class="app-icon" style="background-image: url('images/app-placeholder-icon.png');"></div>
+
+    </div>
+</div>
+  
+
+
+
+</div>
+        
+<div id="spotify-app" style="display:none;">
+  <div class="back-button" onclick="spotifyGoBack('spotify')">
+   </div>
+   
+    <input type="text" id="search-query" placeholder="Search for videos">
+    <button id="search-button"></button>
+    
+    <div id="video-player-container">
+        <div id="video-player">
+            <!-- iframe will be injected here -->
+        </div>
+        
+     <div id="player-container">
+     <div id="play-button"></div>
+        <div id="player-info">
+            <div id="player-title">Title
+</div>
+            <img id="player-thumbnail" src="default-thumbnail.jpg" alt="Video Thumbnail">
+        </div>
+        
+        </div>
+    </div>
+    
+    <div id="search-results"></div>
+</div>
+
+ 
+
+        <!-- default app screen-->
+        <div id="app-screen" class="hidden">
+            <div class="app-content">
+                <div class="app-text">This is an app screen.</div>
+                <div class="back-button" onclick="goBack()"></div>
+            </div>
+        </div>
+        
+        
+
+
+ <div class="calculator-app" id="calculator-app" style="display:none;">
+              <div class="back-button" onclick="CalculatorGoBack()">
+        
+      </div>
+       <div class="calc-container">
+            <div class="panel">
+                <p class="result">0</p>
+            </div>
+            <table>
+                <tr>
+                    <td><button id="ac" class="btn especial">AC</button></td>
+                    <td><button id="sign" class="btn especial">+/-</button></td>
+                    <td><button id="percentage" class="btn especial">%</button></td>
+                    <td><button id="division" class="btn operator">/</button></td>
+                </tr>
+                
+                <tr>
+                    <td><button id="seven" class="btn number">7</button></td>
+                    <td><button id="eight" class="btn number">8</button></td>
+                    <td><button id="nine" class="btn number">9</button></td>
+                    <td><button id="multiplication" class="btn operator">x</button></td>
+                </tr>    
+                
+                <tr>
+                    <td><button id="four" class="btn number">4</button></td>
+                    <td><button id="five" class="btn number">5</button></td>
+                    <td><button id="six" class="btn number">6</button></td>
+                    <td><button id="subtraction" class="btn operator">-</button></td>
+                </tr>  
+                
+                <tr>
+                    <td><button id="one" class="btn number">1</button></td>
+                    <td><button id="two" class="btn number">2</button></td>
+                    <td><button id="three" class="btn number">3</button></td>
+                    <td><button id="addition" class="btn operator">+</button></td>
+                </tr>  
+
+                <tr>
+                    <td colspan="2"><button id="zero" class="btn number"><p id="zeroo">0</p></button></td>
+                    <td><button id="point" class="btn decimal">.</button></td>
+                    <td><button id="equal" class="btn operator">=</button></td>
+                </tr>  
+            </table>
+        </div>
+</div>
+
+        
+        
+<div id="message-app" class="message-app" style="display:none;">
+       <div class="back-button" onclick="MessagesGoBack('messageFeed')"></div>
+      
+      
+    <!-- Blank screen initially -->
+      <div class="message-feed" id="message-feed">
+          <div id="Mheading"></div><!-- Heading added here -->
+              <!-- Other content goes here -->
+          </div>
+
+          <button id="plus-button" class="plus-button">+
+          </button>
+
+ <div id="new-message-screen" class="new-message-screen" style="display: none;">
+   
+       <div class="back-button" onclick="MessagesGoBack('newMessageScreen')">
+         
+       </div>
+   
+       <div class="new-message-header">
+        <h2>New Message</h2>
+       </div>
+       
+       <div class="contact-controls">
+            <div id="selected-contact" class="contact-display">Select a contact
+            </div>
+    
+            <button id="small-plus-button" class="small-plus-button"></button>
+        </div>
+        <div class="message-input-section">
+              <input type="text" id="new-message-input" placeholder="Type your message..." />
+              <button id="send-new-message" class="send-new-message-button"></button>
+         </div>
+</div>
+    
+    
+<div id="contact-picker-screen" class="contact-picker-screen" style="display: none;">
+        
+        <div class="back-button" onclick="MessagesGoBack('contactPickerScreen')">
+          
+        </div>
+        
+         <div class="contact-picker-header">
+              <h2>Contacts</h2>
+         </div>
+    
+    
+          <div id= "contact-picker-list" class="contact-picker-list">
+           </div>
+</div>
+
+
+
+    <!-- Messaging screen for a contact (Initially hidden) -->
+<div id="messaging-screen" style="display: none;">
+      
+      <div class="back-button" onclick="MessagesGoBack('messagingScreen')">
+        
+      </div>
+      
+       <div id="header">
+          <img src="images/profile.png" alt="Profile Picture" id="profile-image">
+          <span id="contact-name">Contact Name</span> <!-- This is where the contact's name will be displayed -->
+       </div>
+        
+       <div class="messages-container" id="messages-container">
+              <div id="messages">
+                  <!-- Messages will appear here -->
+              </div>
+       </div>
+        
+        <div class="typing-container">
+          <input type="text" id="message-input" placeholder="Type a mefssage...">
+            <button class="send-button" id="send-message"></button>
+         </div>
+        
+    </div>
+</div>
+        
+        
+        
+  
+
+    <!-- Settings App: Main container for the whole app -->
+<div id= "settings-app" class="settings-app" style="display:none;">
+  
+    <!-- Settings Screen Container -->
+    <div id="settings-screen" class="settings-screen-container">
+        <div class= "back-button" id = "settings-back-button" onclick="settingsGoBack('settings')"></div>
+        <!-- Settings Header -->
+        <div class="settings-header">
+            <h2>Settings</h2>
+        </div>
+
+        <!-- Search Bar -->
+        <input type="text" id="search-bar" placeholder="Search Settings..." class="search-bar" onkeyup="filterSettings()">
+
+        <!-- Settings Options List -->
+       <div class="settings-options">
+                         <div class="setting-option" onclick="openOption('appearance')">
+                <div class="option-icon" style="background-image: url('images/display.png');"></div>  <!-- Square Box Icon -->
+                Appearance
+            </div>
+            <div class="setting-option" onclick="openOption('sim-settings')">
+                <div class="option-icon" style="background-image: url('images/sim.png');"></div>  <!-- Square Box Icon -->
+                Sim Settings
+            </div>
+            <div class="setting-option" onclick="openOption('phone-optimization')">
+                <div class="option-icon" style="background-image: url('images/performance.png');"></div> <!-- Square Box Icon -->
+                Phone Optimization
+            </div>
+            <div class="setting-option" onclick="openOption('keybinds-mapping')">
+                <div class="option-icon" style="background-image: url('images/keybinds.png');"></div> <!-- Square Box Icon -->
+                Keybinds Mapping
+            </div>
+        </div>
+     </div>
+     
+     
+<!-- Option Containers (hidden by default) -->
+<!-- Appearance Container -->
+<div id="appearance-container" class="option-container" style="display:none">
+  
+  <div class= "back-button" id = "settings-back-button" onclick="settingsGoBack('appearance')"></div>
+  
+    <div class="appearance-header">
+        <h3>Appearance</h3>
+    </div>
+
+    <div class="theme-settings">
+        <h4>THEMES</h4>
+        <div class="theme-buttons">
+            <button class="theme-button-dark" onclick="toggleTheme('dark')"></button>
+            <button class="theme-button-light" onclick="toggleTheme('light')"></button>
+        </div>
+    </div>
+
+    <!-- Wallpaper Changing Options -->
+        <div class="appearance-settings-column">
+            <div class="option-item">
+                Change Wallpaper
+                <div class="wallpaper-options">
+                  
+                    <input type="text" id="wallpaper-url" placeholder="Enter Wallpaper URL">
+                    
+                    <input type="file" id="wallpaper-device" accept="image/*" onchange="chooseWallpaper()">
+                    
+                    <button onclick="setWallpaper()" class="set-wallpaper-button" id="set-wallpaper-button">Set Wallpaper</button>
+                    
+                    
+                    <img id="wallpaper-preview" style="display: none;" alt="Wallpaper Preview">
+                </div>
+                
+            </div>
+      </div>
+
+    <!-- Cover Changing Options -->
+      <div class="option-item">
+          Change Phone Cover
+          <div class="cover-options">
+              <!-- Color picker for cover color -->
+              <input type="color" id="cover-color-picker" onchange="updateCoverColor()">
+              <span id="cover-color-value">#FFFFFF</span> <!-- Display hex value -->
+          </div>
+      </div>
+</div>
+    <div id="phone-optimization-container" class="option-container" style="display:none">
+        <!-- Phone Optimization settings inside the container -->
+        <h3>Phone Optimization</h3>
+        <div class="option-item">Battery Saver</div>
+        <div class="option-item">Data Saver</div>
+        
+     </div>
+</div>
+
+
+
+
+        
+<!-- instagram app -->
+
+        <div id="instagram-app" class="instagram-app" style="display: none;">
+          
+          
+         <div class="back-button" onclick="InstagramGoBack()"></div>
+         
+         
+         
+       <div id="instagram-feed" style="display: none;">
+            
+
+    
+    
+                           
+ <!-- Post Input Section -->
+<div id="post-input-container">
+    <input type="text" id="post-input" placeholder="What's on your mind?">
+</div>
+
+<!-- Buttons for Post and Attach File -->
+<div id="buttons-container">
+    <!-- Post Button -->
+    <button id="post-button">Post</button>
+</div>
+    <!-- Attach File Button -->
+ <input type="file" id="image-upload" accept="image/*" style="display:none;" />
+              <label for="image-upload" id="image-label">Upload</label>
+
+
+
+              
+              
+              <input type="hidden" id="uploaded-image-url" />
+               <div class="posts" id="posts">
+        <!-- Posts will be displayed here -->
+              </div>
+              
+                 
+           
+              
+       </div>
+
+
+
+<div id="instagram-login">
+    <p id="language">English (India)</p>
+    <div id="logo">
+        <!-- Placeholder for Instagram logo -->
+        <img src="images/instagram.png" alt="Instagram" width="70">
+    </div>
+    <form id="login-form">
+        <input type="text" id="username-input" placeholder="Username, email address or mobile number">
+        <input type="password" id="password-input" placeholder="Password">
+        <button type="button" id="login-button">Log in</button>
+    </form>
+    <a href="#" id="forgot-password">Forgotten Password?</a>
+    <button id="create-account-button">Create new account</button>
+    <div id="meta">
+        <p>Meta</p>
+    </div>
+</div>
+        </div>
+        
+        
+        
+<!-- contacts app -->
+<div id="contacts-app" class="contacts-app" style="display: none;">
+    <div class="back-button" onclick="contactsGoBack()"></div>
+    
+    <h2 class="contacts-title">Contacts</h2>
+    
+    <!-- "+" Button to Add Contact -->
+    <div class="add-contact-btn" onclick="openNewContactForm()">+</div>
+    
+    <!-- Search Box -->
+     <!-- Search Box -->
+    <input type="text" class="search-box" placeholder="Search contacts..." oninput="filterContacts()" />
+    
+    <!-- Contacts Table -->
+    <div class="contacts-table">
+        <table>
+            <tbody id="contacts-list">
+                <!-- Contacts will be dynamically added here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    
+    
+    <!-- New Contact Form (Hidden by Default) -->
+    <div class="new-contact-form" id="newContactForm">
+        <h3>Add New Contact</h3>
+        <input type="text" id="newContactName" placeholder="Name" />
+        <input type="text" id="newContactNumber" placeholder="Phone Number" />
+        <button class="save-button" onclick="addNewContact()">Save</button>
+    <button class="cancel-button" onclick="closeAddContactForm()">Cancel</button>
+    </div>
+</div>
+
+
+
+
+     <div id="valet-app" style="display:none;">
+       
+       <div class="back-button" onclick="valetGoBack('valet')"></div>
+        <!-- Valet Header -->
+        <div class="valet-header">
+            <h1>Valet App</h1>
+        </div>
+
+        <!-- Car Search Bar -->
+        <input type="text" id="car-search" placeholder="Search for a car..." onkeyup="filterCars()">
+
+        <!-- Container for Owned Cars -->
+        <div id="owned-cars" class="car-boxes-container">
+            <!-- Car boxes will be dynamically added here by JavaScript -->
+        </div>
+    </div>
+    
+    
+    </div>
+</div>
+    <!-- Your HTML content -->
+
+    <!-- External libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <script src="contacts.js"></script>
+    <script src="instagram.js"></script>
+    <script src="messages.js"></script>
+    <script src="settings.js"></script>
+    <script src="calculator.js"></script>
+    <script src="valet.js"></script>
+    <script src="spotify.js"></script>
+        <script src="gpay.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+#spotify-app {
+    text-align: center;
+    
+    position:relative;
+    width:100%;
+    background-color:#080808;
+    height:100%;
+}
+
+#search-query {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    border-radius:40px;
+    border:none;
+    background-color:#262626;
+    color:white;
+    position:relative;
+}
+
+#search-button {
+  width:20px;
+  height:20px;
+    margin-top:60px;
+    cursor: pointer;
+   
+    position:absolute;
+    margin-left:-40px;
+    border:none;
+    background-size:cover;
+    background-image: url('images/search.png');
+    background-color:transparent;
+}
+
+#search-results {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-y: auto; 
+    
+    max-height:70%;
+    width:100%;
+    
+}
+
+.video-item {
+    cursor: pointer;
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #141414;
+    
+    transition: background-color 0.2s;
+    width: 100%;
+    
+    text-align: left;
+    
+    display: flex;
+    align-items: center;
+    height:40px;
+    
+}
+
+.video-item:hover {
+    background-color: #e1e1e1;
+}
+
+.video-item img {
+    width: 45px;
+    height: 45px;
+    margin-right: 15px;
+    object-fit: cover ;
+    margin-left:5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.video-item div p:first-child {
+    white-space: nowrap; /* Prevents the text from wrapping to the next line */
+    overflow: hidden; /* Hides the overflowing text */
+    text-overflow: hidden; /* Adds the ellipsis (...) at the end */
+    max-width: 210px; /* Adjust the width as needed */
+    font-size: 13px;
+    margin-bottom: -10px;
+    margin-right:10px;
+    color:white;
+}
+.video-item div p:last-child {
+    white-space: nowrap; /* Prevents the text from wrapping to the next line */
+    overflow: hidden; /* Hides the overflowing text */
+    text-overflow: hidden; /* Adds the ellipsis (...) at the end */
+    max-width:220px; /* Adjust the width as needed */
+    font-size: 12px;
+    color:#b9b9b9;
+}
+
+#video-player-container {
+    margin-top: 500px;
+    display: none;
+    text-align: center;
+    margin-left:-10px;
+    position:absolute;
+    width:100%;
+    margin-left:10px;
+    
+}
+
+
+#player-container {
+  background-color: #262626;
+  width: 90%;
+  height: 50px;
+  position: absolute;
+  border-radius: 5px;
+  top: 0px;
+  left: 8%;
+  margin-left: -23px;
+  z-index: 1;
+  
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  pointer-events:none;
+}
+
+#play-button {
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-image: url('images/play.png');
+  
+  background-color: transparent;
+  z-index: 2;
+  margin-left:10px;
+}
+
+#player-info {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  
+}
+
+#player-title {
+  color: white;
+  font-size: 11px;
+  margin: 0 10px;
+  overflow-x:auto;
+  
+  max-width: 170px;  /* Adjust based on space */
+    /* Hide overflowing text */
+  white-space: nowrap;  /* Prevent text from wrapping */
+  position: relative;  /* Ensure the span can move inside */
+  display: inline-block;
+  cursor:pointer;
+  pointer-events:auto;
+    
+}
+
+
+
+#player-thumbnail {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border:none;
+  margin-left: 9px;
+}
+
+#video-player iframe {
+  opacity:0;
+  width: 80%;
+  height: 40px;
+  margin-top: 10px;
+  position: relative;
+  margin-left: -60px;
+  z-index: 1; /* Lower than play button */
+  pointer-events: auto; /* Ensure iframe remains interactive */
+}

@@ -1,0 +1,338 @@
+/* Define the SF Pro font */
+@font-face {
+    font-family: 'SFUIDisplay';
+    src: url('fonts/SFUIDisplay-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply SF Pro font to the body */
+body {
+    font-family: 'SFUIDisplay', sans-serif; /* Apply SFUIText font */
+}
+.phone {
+    width: 350px; /* Increased phone width */
+    height: 700px; /* Increased phone height */
+    
+    border-radius:0px;
+    margin: 0 auto;
+    position: relative;
+    
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.screen {
+    width: 92%;  /* Inner width of the phone screen */
+   
+    height: 97%; /* Inner height of the phone screen */
+    
+    box-shadow: 0 0 0 3px #00838a;
+    border:7px solid black;
+    
+     position: absolute;
+     
+    top: 50%; /* Positioning it in the center */
+    left: 50%; /* Positioning it in the center */
+    
+    
+    transform: translate(-50%, -50%); /* Adjust by 50% of its width/height */
+    border-radius:58px;
+    overflow:hidden;
+}
+.example {
+  display:none;
+background-size: cover;
+background-image: url('images/example.jpeg');
+position: absolute;
+    top:48.5%; /* Positioning it in the center */
+    left: 50.5%; /* Positioning it in the center */
+    width: 94%;
+    height: 94%;
+    
+    pointer-events: none;
+    
+    transform: translate(-50%, -50%); /* Adjust by 50% of its width/height */
+    opacity:0.7;
+}
+
+/*
+.bezel {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    width: 95%;
+    height: 99%;
+    
+    background-color: black;
+    border-radius: 55px;
+    pointer-events: none;
+   
+    transform: translate(-50%, -50%); 
+}
+
+.cover {
+    position: absolute;
+    top: 50
+    left: 50%; 
+    width: 97%;
+    height: 100%;
+    background-color: blue;
+    border-radius: 55px;
+    pointer-events: none;
+    
+    transform: translate(-50%, -50%); 
+}
+*/
+
+.dynamic-island {
+    position: absolute;
+    top: 19px; /* Adjusted position */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 96px;
+    height: 27px;
+    background-color: black;
+    border-radius: 17px;
+    z-index: 10;
+    
+}
+
+.status {
+    position: absolute;
+    top: 13px;
+    transform: translateX(50px);
+    width: 110px;
+    height:45px;
+    z-index: 20;
+}
+
+.statusbar time {
+    position: absolute;
+    top: 27px;
+    color: white;
+    transform: translateX(-120px);
+    font-size:11px;
+    z-index: 20;
+}
+
+#home-screen {
+    display: none;
+}
+
+.wallpaper {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0;
+    bottom: 0;
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url('images/wp.jpg');
+    text-align:center;
+}
+
+.app-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+    justify-items: center;
+    align-items: center;
+    margin-top:21%;
+    margin-left:22px;
+    z-index: 2;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom:13px;
+    margin-right:20px;
+    
+}
+.app {
+    cursor: grab;
+    transition: opacity 0.2s;
+}
+
+.app:active {
+    cursor: grabbing;
+    opacity: 0.7; /* Gives visual feedback */
+}
+.app-icon {
+    width: 50px; /* Larger app icon size */
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 0px;
+}
+
+.app-name {
+    font-size: 10px;
+    text-align: center;
+    color: #ffffffff;
+    
+}
+
+#app-screen {
+    height: 100%;
+    
+    color: blue;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-content {
+    text-align: center;
+}
+
+.app-text {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    width: 40%;
+    height: 7px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.5);
+    z-index:20;
+}
+
+.lock-screen {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: transparent ;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url('images/lockscreen.png');
+    text-align: center;
+    transition: transform 0.5s ease;
+    transform: translateY(0);
+}
+
+.lock-screen-content {
+    text-align: center;
+    transform: translateY(-220px);
+}
+
+.lock-screen-content h2 {
+    
+    font-size: 50px; /* Adjust font size */
+    color: white;
+}
+
+.lock-screen-content p {
+    transform: translateY(46px);
+    font-size: 13px; /* Adjust font size */
+    color: white;
+}
+
+.lock-screen.slide-up {
+    transform: translateY(-100%);
+}
+
+.notification {
+  margin-top: 45px;
+  width:250px;
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    z-index: 100;
+    font-family: Arial, sans-serif;
+    
+    opacity: 1;
+    visibility: visible;
+}
+
+.notification-title {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.notification-username {
+    font-weight: bold;
+}
+
+.notification-text {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    margin: 0 5px 0 5px;
+}
+
+.notification-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.hide {
+    opacity: 0;
+    transition: opacity 1s;
+    visibility: hidden;
+}
+
+.app-tray {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 92%; /* Match the width of the screen */
+    height: 80px;
+    margin-left:13px;
+    margin-bottom:10px;
+    position: absolute;
+    bottom: 10px; /* Adjust position at the bottom */
+    background-color: rgba(255,255, 255, 0.2); /* Optional background */
+    backdrop-filter: blur(5px);
+    border-radius: 30px; /* Rounded edges */
+    z-index: 5;
+}
+
+.app-tray .app {
+    width: 50px; /* Same size as other apps */
+    height: 60px;
+    margin: 20px 12px 10px 12px;
+    
+    background-size: cover;
+}
+.app-tray .app-name {
+    display: none; /* Hide the app name in the app tray */
+}

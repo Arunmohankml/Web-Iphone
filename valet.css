@@ -1,0 +1,153 @@
+/* Main container for valet app */
+#valet-app {
+    padding:0px 15px 0px 15px;
+    background-color: #070707;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Stack header, search bar, and car boxes vertically */
+    align-items: center; /* Center content */
+    /* Enable vertical scrolling if content overflows */
+    
+}
+
+/* Valet Header */
+.valet-header {
+    background-color: #202020; /* Dark background for the header */
+    padding: 5px;
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for better visual effect */
+    width: 400px; /* Ensure header takes full width */
+}
+
+/* Title Styling */
+.valet-header h1 {
+    margin-top: 50px;
+    font-size: 16px;
+    color: white;
+}
+
+/* Search Bar Styling */
+#car-search {
+    width: 85%; /* Full width */
+    padding: 12px 20px; /* Increased padding for better look */
+    margin-bottom: 15px;
+    font-size: 10px;
+    border: none;
+    border-radius: 18px;
+    background-color: #202020;
+    color: white;
+    
+}
+
+#car-search::placeholder {
+    color: white;
+}
+
+/* Container for all car boxes */
+.car-boxes-container {
+
+    display: flex;
+    flex-direction: column; /* Stack car boxes vertically */
+    gap: 10px; /* Space between boxes */
+    align-items: center; /* Center the boxes horizontally */
+    width: 100%; /* Ensure container takes full width */
+    height: 80vh; /* Set a fixed height for the valet app */
+    overflow-y: auto; 
+    
+}
+
+/* Each car box */
+.car-box {
+    display: flex;
+    flex-direction: row; /* Align the car name and image horizontally inside the box */
+    justify-content: flex-start; /* Align items to start (left) */
+    align-items: center;
+    width: 83%; /* Adjust width as per preference */
+    padding: 20px;
+    background-color: #202020;
+    border-radius: 15px;
+   
+    position: relative;
+    margin-bottom: 5px; /* Space between car boxes */
+}
+
+
+/* Car image on the right side of the box */
+.car-image {
+    max-width:90px;
+    max-height:90px;
+    border-radius: 8px;
+    transform: translateX(30px);/* Space between image and name */
+    
+}
+
+/* Car name (centered inside the box) */
+.car-details-container {
+    display: flex;
+    flex-direction: column; /* Stack name, type, and top speed vertically */
+    
+    justify-content: flex-start;
+}
+
+.car-details-container car-name {
+    font-size: 13px;
+    color: white;
+    margin: 3px 0 3px 0;
+}
+
+.car-details-container p {
+    font-size: 10px;
+    color: #666;
+    margin: 3px 0 5px;
+}
+
+
+
+.car-box.expanded {
+    height: auto; /* Adjust as necessary */
+    background-color: #202020; /* Optional: change background when expanded */
+}
+
+.spawn-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    
+    border-radius: 12px;
+    color: black;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.spawn-button:hover {
+    border-color: #0071e6;
+}
+
+
+/* Car price styling */
+.car-price {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 14px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+/* Empty state when no cars are owned */
+.car-boxes-container.empty {
+    text-align: center;
+    color: white;
+}
+
+/* Styling for car box when no cars are owned */
+.car-boxes-container.empty p {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}

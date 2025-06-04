@@ -1,0 +1,122 @@
+.gpay-ui {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #121212;
+  font-family: "Arial", sans-serif;
+  height: 100%;
+  color: white;
+  overflow-x: auto;
+}
+
+.gpay-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.gpay-search {
+  flex-grow: 1;
+  background-color: #2b2b2b;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 15px;
+  color: white;
+  font-size: 16px;
+}
+
+.profile-icon {
+  background-color: #f44336;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.bank-section {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  color: #a1a1a1;
+}
+
+.add-bank-btn {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.action-icons {
+  margin: 20px 0;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: left;
+  align-content: left;
+  margin: 10px 0;
+  
+}
+
+.icon-item {
+  text-align: center;
+  color: white;
+  font-size: 10px;
+  
+ 
+}
+.icon-item img {
+  width:20px;
+  height:20px;
+  
+    
+    filter: invert(29%) sepia(100%) saturate(500%) hue-rotate(180deg) brightness(1.5)
+
+}
+
+
+.people-section {
+  margin: 20px 0 20px;
+}
+
+.people-list {
+  display: flex;
+  gap: 20px;
+}
+
+.person {
+  text-align: center;
+}
+
+.manage-money-section {
+  margin: 20px 0;
+}
+
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+}

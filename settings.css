@@ -1,0 +1,221 @@
+/* Main Settings App Container */
+.settings-app {
+    display: flex;
+    flex-direction: column;
+    background-color: #090909;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+}
+
+/* Settings Screen Container */
+.settings-screen-container {
+    display: block;
+    padding: 5px;
+    background-color: #111111;
+    
+}
+
+.settings-header {
+    margin-top: 60px;
+    text-align: left;
+    margin-left: 14px;
+    font-size: 14px;
+    margin-bottom:-7px;
+}
+
+/* Search Bar */
+.search-bar {
+    margin-top: -10px;
+    padding: 8px;
+    width: 92%;
+    background-color: #222222;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-left:5px;
+    margin-bottom: 10px;
+}
+
+.search-bar::placeholder {
+    color: #888;
+}
+
+/* List of Options */
+.settings-options {
+    margin-top: 7px;
+    
+    width: 97%;
+    background-color: #222222;
+    margin-left:6px;
+    border-radius: 10px;
+    font-size:13px;
+}
+
+.setting-option {
+    display: flex;
+    align-items: center; /* Align icon and text */
+    
+    
+    border-bottom:1px solid #3e3e3e;
+    padding: 5px 0px 5px 0px;
+    margin: 0px 10px 0px 10px;
+    
+    cursor: pointer;
+    
+}
+
+.setting-option:hover {
+    background-color: #222222;
+}
+
+/* Option Icon (Square Box) */
+.option-icon {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px; /* Space between icon and text */
+    border-radius: 4px;
+}
+
+/* Option Container (Hidden by default) */
+/* Appearance Container */
+#appearance-container {
+    background-color: #090909;
+    padding: 0px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%; /* Ensure it takes up the full space */
+    max-height: 100%; /* Adjust as needed to set a maximum visible height */
+    overflow-y: auto; /* Enables vertical scrolling */
+}
+
+.appearance-header  {
+    margin: 0; /* Remove any extra margin */
+    background-color: #222222;
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    color: white; /* Text color for contrast */
+    /* Optional: adds rounded corners */
+}
+.appearance-header h3{
+  margin-top: 50px;
+}
+
+}
+
+.theme-settings h4 {
+     background-color: #222222;
+    font-size: 5px;
+    
+}
+.theme-settings {
+    padding:10px 0 10px 0;
+    margin: -10px 1px 5px 10px;
+}
+
+
+.theme-button-dark {
+  
+    padding: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url('images/dark.png');
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+ .theme-button-light {
+  
+    padding: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url('images/light.png');
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+/* Aligning theme buttons horizontally */
+.theme-buttons {
+  
+  margin-top:-10px;
+    display: flex;
+    gap: 30px; /* Adds space between buttons */
+    height: 200px;
+    margin-left: 40px;
+    
+}
+
+/* Hover effect for the theme buttons */
+.theme-buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* Light Mode hover effect */
+.light-theme .theme-buttons button:hover {
+    background-color: #0056b3; /* Fixed hover color */
+}
+
+
+
+
+.option-item {
+    margin-bottom: 20px;
+    font-size: 10;
+    margin-left:10px;
+    margin-top: 10px;
+}
+
+.wallpaper-options input,
+.set-wallpaper-button {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+    width: 94%;
+    box-sizing: border-box;
+    border:none;
+    border-radius: 20px;
+    color:white;
+    background-color: #222222;
+}
+
+#wallpaper-preview {
+    
+    margin:20px 5px 20px 5px;
+    max-width: 95%;
+    border-radius: 8px;
+}
+
+.cover-options input {
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.cover-options span {
+    font-size: 16px;
+    margin-left: 10px;
+    
+}
+
