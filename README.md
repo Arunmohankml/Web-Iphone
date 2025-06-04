@@ -1,17 +1,12 @@
-
-
 # Web-iPhone 📱
 
 A fully customizable and open-source **WebPhone script** built for:
 - Citizen IV
 - FiveM / GTA Roleplay Servers
 - Happiness MP Clients
-- or even as a standalone **web-based phone UI** for any project!
+- or even as a standalone **web-based phone UI** for any projects
 
-Live Preview ➜ [arunmohankml.github.io/Web-Iphone](https://arunmohankml.github.io/Web-Iphone/)
-
----
-
+--
 ## 🌟 Features (So far)
 
 ✅ iOS-style phone interface  
